@@ -1,0 +1,75 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="TextStylePrimary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="TextStylePrimary.AppName">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">50sp</item>
+    </style>
+
+    <style name="TextStylePrimary.LoginWelcomeNote">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="TextStylePrimary.ForgotPassword">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextStylePrimary.SignUp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="EditTextBox">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <style name="CustomButtonStyle">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:background">#8BC34A</item>
+        <item name="android:textAllCaps">false</item>
+        <!--<item name="android:capitalize">characters</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:shadowDx">1.2</item>
+        <item name="android:shadowDy">1.2</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:gravity" >center</item>
+        <item name="android:layout_margin" >3dp</item>
+        <item name="android:textSize" >5pt</item>
+        <item name="android:background">#8BC34A</item>
+        <item name="android:shadowColor" >#70ff106d</item>-->
+    </style>
+</resources>

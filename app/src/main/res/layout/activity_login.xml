@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.student.oolie.LoginActivity">
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline3"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <TextView
+        android:id="@+id/textViewAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        style="@style/TextStylePrimary.AppName"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        android:layout_marginTop="100dp" />
+
+    <TextView
+        android:id="@+id/textViewWelNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_welcome_note"
+        style="@style/TextStylePrimary.LoginWelcomeNote"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="@+id/textViewAppName"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewAppName"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAppName" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:hint="@string/email_hint"
+        style="@style/EditTextBox"
+        android:background="@drawable/edit_textbox_style"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="@+id/textViewWelNote"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewWelNote"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWelNote"
+        app:layout_constraintHorizontal_bias="0.508" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:hint="@string/pwd_hint"
+        android:background="@drawable/edit_textbox_style"
+        style="@style/EditTextBox"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="@+id/editTextEmail"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/editTextEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        style="@style/CustomButtonStyle"
+        android:text="@string/login_btn"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="@+id/editTextPassword"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/editTextPassword"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonCreateAccount"
+        style="@style/CustomButtonStyle"
+        android:text="@string/create_acc_btn"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="@+id/buttonLogin"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/buttonLogin" />
+
+    <TextView
+        android:id="@+id/textViewForgotPwd"
+        style="@style/TextStylePrimary.ForgotPassword"
+        android:text="@string/forgot_pwd"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCreateAccount"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/buttonCreateAccount"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="@+id/buttonCreateAccount"
+        app:layout_constraintHorizontal_bias="0.0" />
+</android.support.constraint.ConstraintLayout>
