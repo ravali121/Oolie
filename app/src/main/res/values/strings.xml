@@ -20,5 +20,6 @@
         <item>2019(Sophomore)</item>
         <item>2020(Freshman)</item>
     </string-array>
+    <string name="facebook_app_id">109236476383426</string>
 
 </resources>

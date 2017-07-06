@@ -13,6 +13,13 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 
 import org.json.JSONObject;
 import java.util.HashMap;
@@ -22,13 +29,19 @@ public class    LoginActivity extends AppCompatActivity {
 
     EditText editTextEmail, editTextPassword;
     Button buttonLogin, buttonCreateAccount;
+            LoginButton login_fb;
     String emailtxt, passwordtxt;
     String login_url = "http://10.0.0.50:3000/signUp";
+    CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        connectWithFacebook();
+        getUserFacebookProfile();
+
 
         editTextEmail = (EditText)findViewById(R.id.editTextEmail);
         editTextPassword = (EditText)findViewById(R.id.editTextPassword);
@@ -88,5 +101,36 @@ public class    LoginActivity extends AppCompatActivity {
         });
         MySingleton.getInstance(LoginActivity.this).addToRequestqueue(jsonObjectRequest);
 
+    }
+
+    private void connectWithFacebook(){
+        callbackManager = CallbackManager.Factory.create();
+        login_fb = (LoginButton)findViewById(R.id.login_fb);
+
+    }
+
+    private void getUserFacebookProfile(){
+        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                Toast.makeText(getApplicationContext(),loginResult.getAccessToken().toString(),Toast.LENGTH_LONG).show();
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 }
