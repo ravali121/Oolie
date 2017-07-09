@@ -83,7 +83,8 @@
         android:id="@+id/divider"
         android:layout_width="fill_parent"
         android:layout_height="2dip"
-        android:background="@color/colorAccent" />
+        android:background="@color/colorAccent"
+        />
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_fb"

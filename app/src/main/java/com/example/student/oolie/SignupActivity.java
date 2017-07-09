@@ -2,12 +2,14 @@ package com.example.student.oolie;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +24,7 @@ public class SignupActivity extends AppCompatActivity {
 
     final Context context = this;
     TextView grad_level;
+    Button button_back;
     Spinner spinner;
     private ArrayAdapter<String> adapter;
     private ArrayList<String> arrayList;
@@ -31,6 +34,18 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        button_back = (Button)findViewById(R.id.button2);
+
+        button_back.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent logactivity = new Intent(SignupActivity.this, LoginActivity.class);
+                startActivity(logactivity);
+                finish();
+
+            }
+        });
         grad_level = (TextView) findViewById(R.id.grad_level);
         grad_level.setOnClickListener(new View.OnClickListener() {
 
