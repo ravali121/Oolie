@@ -115,6 +115,7 @@ public class    LoginActivity extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
                 Toast.makeText(getApplicationContext(),loginResult.getAccessToken().toString(),Toast.LENGTH_LONG).show();
 
+
             }
 
             @Override

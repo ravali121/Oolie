@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.student.oolie.SocialLoginActivity">
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline3"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <TextView
+        android:id="@+id/textViewWelNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_welcome_note"
+        style="@style/TextStylePrimary.LoginWelcomeNote"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline3" />
+    <TextView
+        android:id="@+id/fb_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_welcome_note"
+        style="@style/TextStylePrimary.LoginWelcomeNote"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewWelNote" />
+
+
+    <ImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="140dp"
+        android:layout_height="134dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/com_facebook_profile_picture_blank_square"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/fb_username"
+        app:layout_constraintHorizontal_bias="0.502" />
+    <TextView
+        android:id="@+id/textViewClassOf"
+        style="@style/TextStylePrimary.SignUp"
+        android:text="@string/class_of"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        tools:layout_editor_absoluteY="341dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintTop_toBottomOf="@id/iv_profile"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.182"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/grad_level"
+        style="@style/CustomButtonStyle"
+        android:layout_width="252dp"
+        android:layout_height="42dp"
+        android:paddingTop="12dp"
+        android:layout_marginLeft="0dp"
+        android:hint="@string/grad_yr"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewClassOf"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewClassOf" />
+
+</android.support.constraint.ConstraintLayout>

@@ -24,7 +24,7 @@ public class SignupActivity extends AppCompatActivity {
 
     final Context context = this;
     TextView grad_level;
-    Button button_back;
+    Button button_back,buttonSignUp;
     Spinner spinner;
     private ArrayAdapter<String> adapter;
     private ArrayList<String> arrayList;
@@ -35,6 +35,19 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         button_back = (Button)findViewById(R.id.button2);
+        buttonSignUp = (Button)findViewById(R.id.buttonSignUp);
+        grad_level = (TextView) findViewById(R.id.grad_level);
+
+
+        buttonSignUp.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent homefeedactivity = new Intent(SignupActivity.this, HomefeedActivity.class);
+                startActivity(homefeedactivity);
+                finish();
+            }
+        });
 
         button_back.setOnClickListener(new View.OnClickListener(){
 
@@ -46,7 +59,7 @@ public class SignupActivity extends AppCompatActivity {
 
             }
         });
-        grad_level = (TextView) findViewById(R.id.grad_level);
+
         grad_level.setOnClickListener(new View.OnClickListener() {
 
             @Override
