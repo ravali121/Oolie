@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/WindowBackground</item>
     </style>
 
     <style name="TextStylePrimary">
@@ -60,24 +61,22 @@
         <item name="android:textColor">#000000</item>
         <item name="android:background">#8BC34A</item>
         <item name="android:textAllCaps">false</item>
-        <!--<item name="android:capitalize">characters</item>
-        <item name="android:typeface">monospace</item>
-        <item name="android:shadowDx">1.2</item>
-        <item name="android:shadowDy">1.2</item>
-        <item name="android:shadowRadius">2</item>
-        <item name="android:textColor">#000000</item>
-        <item name="android:gravity" >center</item>
-        <item name="android:layout_margin" >3dp</item>
-        <item name="android:textSize" >5pt</item>
-        <item name="android:background">#8BC34A</item>
-        <item name="android:shadowColor" >#70ff106d</item>-->
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-
+    <style name="Text">
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="Text.Primary">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="Text.Secondary">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">8sp</item>
+    </style>
 
 
 </resources>
