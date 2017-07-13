@@ -30,13 +30,18 @@ public class DataSource  implements DataSourceInterface{
             "How is your preparation for the finals"
     };
     private final int[] schoolLogos={
+            R.mipmap.school,
+            R.mipmap.school,
+            R.mipmap.school,
             R.mipmap.school
+
     };
 
     private final String[] schoolNames={
             "Evergreen Valley High School",
             "Montogomery School",
             "Challenger",
+            "San Jose State University"
     };
 
 
@@ -53,7 +58,11 @@ public class DataSource  implements DataSourceInterface{
             int randOne = random.nextInt(4);
             int randTwo = random.nextInt(4);
             int randThree = random.nextInt(4);
-            
+            int randFour = random.nextInt(4);
+
+            ListItem listItem = new ListItem(datesAndTimes[randOne],comments[randTwo],schoolNames[randThree],schoolLogos[randFour]);
+            listOfData.add(listItem);
+
         }
         return listOfData;
     }
