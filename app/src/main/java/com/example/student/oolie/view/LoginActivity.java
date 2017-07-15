@@ -114,7 +114,11 @@ public class    LoginActivity extends AppCompatActivity {
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Toast.makeText(getApplicationContext(),loginResult.getAccessToken().toString(),Toast.LENGTH_LONG).show();
+                /*Toast.makeText(getApplicationContext(),loginResult.getAccessToken().toString(),Toast.LENGTH_LONG).show();*/
+                Intent socailLoginActivity = new Intent(LoginActivity.this, SocialLoginActivity.class);
+                startActivity(socailLoginActivity);
+                finish();
+
 
 
             }
