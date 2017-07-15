@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -67,13 +68,20 @@ public class Tab1 extends Fragment implements ViewInterface{
     @Override
     public void setUpAdapterAndView(List<ListItem> listOfData) {
         this.listOfData = listOfData;
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),llm.getOrientation()));
         adapter= new CustomAdapter();
         recyclerView.setAdapter(adapter);
 
+
     }
 
+
+
     private class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder>{
+
+
 
         @Override
         public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -81,6 +89,10 @@ public class Tab1 extends Fragment implements ViewInterface{
             View v = layoutInflater.from(parent.getContext()).inflate(R.layout.tab1_data_items,parent,false);
             context = parent.getContext();
             return new CustomViewHolder(v);
+
+
+
+
         }
 
         @Override
@@ -90,6 +102,7 @@ public class Tab1 extends Fragment implements ViewInterface{
             holder.date_posted.setText(currentItem.getDateAndTime());
             holder.school_name.setText(currentItem.getSchoolName());
             holder.school_logo.setBackgroundResource(currentItem.getSchoolLogo());
+
         }
 
         @Override
