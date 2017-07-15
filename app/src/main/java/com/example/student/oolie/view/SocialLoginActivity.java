@@ -1,7 +1,9 @@
-package com.example.student.oolie;
+package com.example.student.oolie.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.student.oolie.R;
 
 public class SocialLoginActivity extends AppCompatActivity {
 

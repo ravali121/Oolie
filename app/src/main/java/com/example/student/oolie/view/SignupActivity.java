@@ -1,4 +1,4 @@
-package com.example.student.oolie;
+package com.example.student.oolie.view;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,10 +14,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.webianks.library.scroll_choice.ScrollChoice;
+import com.example.student.oolie.R;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class SignupActivity extends AppCompatActivity {
