@@ -4,6 +4,7 @@
     <string name="email_hint">email address</string>
     <string name="pwd_hint">password</string>
     <string name="login_btn">Login</string>
+    <string name="logout_btn">Logout</string>
     <string name="create_acc_btn">Create Account</string>
     <string name="forgot_pwd">Forgot Password?</string>
     <string name="sign_up">Sign Up</string>
