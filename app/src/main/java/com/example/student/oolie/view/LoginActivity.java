@@ -54,8 +54,6 @@ public class    LoginActivity extends AppCompatActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         connectWithFacebook();
 
-
-
         editTextEmail = (EditText)findViewById(R.id.editTextEmail);
         editTextPassword = (EditText)findViewById(R.id.editTextPassword);
         buttonLogin = (Button)findViewById(R.id.buttonLogin);
@@ -137,7 +135,6 @@ public class    LoginActivity extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
                 Profile profile = Profile.getCurrentProfile();
                 nextActivity(profile);
-                Toast.makeText(getApplicationContext(), "Logging in...", Toast.LENGTH_SHORT).show();
             }
 
             @Override

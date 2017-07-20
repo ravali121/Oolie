@@ -46,9 +46,7 @@ public class Tab1 extends Fragment implements ViewInterface{
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab1,container,false);
-
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_feed);
-
         //Dependency injection
          controller = new Controller(this, new DataSource());
         return rootView;
@@ -62,7 +60,6 @@ public class Tab1 extends Fragment implements ViewInterface{
         intent.putExtra(EXTRA_COMMENT,comment);
         intent.putExtra(EXTRA_SCHOOL_NAME,schoolName);
         intent.putExtra(EXTRA_SCHOOL_LOGO,schoolLogo);*/
-
     }
 
     @Override
@@ -73,13 +70,19 @@ public class Tab1 extends Fragment implements ViewInterface{
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),llm.getOrientation()));
         adapter= new CustomAdapter();
         recyclerView.setAdapter(adapter);
-
-
     }
 
 
 
     private class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder>{
+
+
+        @Override
+        public int getItemViewType(int position){
+
+            return listOfData.get(position).getType();
+
+        }
 
 
 
@@ -88,13 +91,10 @@ public class Tab1 extends Fragment implements ViewInterface{
 
             View v = layoutInflater.from(parent.getContext()).inflate(R.layout.tab1_data_items,parent,false);
             context = parent.getContext();
+
+
             return new CustomViewHolder(v);
-
-
-
-
         }
-
         @Override
         public void onBindViewHolder(CustomViewHolder holder, int position) {
              ListItem currentItem = listOfData.get(position);
@@ -102,9 +102,7 @@ public class Tab1 extends Fragment implements ViewInterface{
             holder.date_posted.setText(currentItem.getDateAndTime());
             holder.school_name.setText(currentItem.getSchoolName());
             holder.school_logo.setBackgroundResource(currentItem.getSchoolLogo());
-
         }
-
         @Override
         public int getItemCount() {
             //Number of items the adapter needs to manage
@@ -131,7 +129,6 @@ public class Tab1 extends Fragment implements ViewInterface{
                 this.container.setOnClickListener(this);
 
             }
-
             @Override
             public void onClick(View view) {
                 //Get the position of this ViewHolder with in the adapter
@@ -141,5 +138,8 @@ public class Tab1 extends Fragment implements ViewInterface{
             }
         }
     }
+
+
+
 }
 

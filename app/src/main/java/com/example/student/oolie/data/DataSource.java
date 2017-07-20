@@ -11,6 +11,8 @@ import java.util.Random;
  */
 
 public class DataSource  implements DataSourceInterface{
+    int TYPE_IMAGE = 1;
+    int TYPE_VIDEO = 2;
 
     private static final int sizeOfCollection = 8;
 
@@ -48,6 +50,7 @@ public class DataSource  implements DataSourceInterface{
     public DataSource() {
     }
 
+
     @Override
     public List<ListItem> getListOfData() {
 
@@ -60,7 +63,7 @@ public class DataSource  implements DataSourceInterface{
             int randThree = random.nextInt(4);
             int randFour = random.nextInt(4);
 
-            ListItem listItem = new ListItem(datesAndTimes[randOne],comments[randTwo],schoolNames[randThree],schoolLogos[randFour]);
+            ListItem listItem = new ListItem(datesAndTimes[randOne],comments[randTwo],schoolNames[randThree],schoolLogos[randFour],TYPE_IMAGE);
             listOfData.add(listItem);
 
         }

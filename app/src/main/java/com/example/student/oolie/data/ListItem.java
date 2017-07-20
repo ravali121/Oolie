@@ -9,12 +9,14 @@ public class ListItem {
     private String comment;
     private String schoolName;
     private int schoolLogo;
+    private int type;
 
-    public ListItem(String dateAndTime, String comment, String schoolName, int schoolLogo) {
+    public ListItem(String dateAndTime, String comment, String schoolName, int schoolLogo, int type) {
         this.dateAndTime = dateAndTime;
         this.comment = comment;
         this.schoolName = schoolName;
         this.schoolLogo = schoolLogo;
+        this.type=type;
     }
 
     public String getDateAndTime() {
@@ -47,5 +49,13 @@ public class ListItem {
 
     public void setSchoolLogo(int schoolLogo) {
         this.schoolLogo = schoolLogo;
+    }
+
+    public int getType(){
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

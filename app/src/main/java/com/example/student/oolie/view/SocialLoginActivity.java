@@ -3,6 +3,8 @@ package com.example.student.oolie.view;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,7 +25,7 @@ public class SocialLoginActivity extends AppCompatActivity {
 
 
     TextView fb_username;
-    Button logout;
+    Button logout,login;
     private ShareDialog shareDialog;
 
     @Override
@@ -36,7 +38,7 @@ public class SocialLoginActivity extends AppCompatActivity {
         Bundle inBundle = getIntent().getExtras();
         String name = inBundle.get("name").toString();
         String surname = inBundle.get("surname").toString();
-        String imageUrl = inBundle.get("imageUrl").toString();
+        final String imageUrl = inBundle.get("imageUrl").toString();
 
         fb_username = (TextView) findViewById(R.id.fb_username);
         fb_username.setText("" + name + " " + surname);
@@ -47,6 +49,19 @@ public class SocialLoginActivity extends AppCompatActivity {
                 LoginManager.getInstance().logOut();
                 Intent login = new Intent(SocialLoginActivity.this, LoginActivity.class);
                 startActivity(login);
+                finish();
+            }
+        });
+
+        login = (Button)findViewById(R.id.buttonLogin);
+        login.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent homefeedActivity = new Intent(SocialLoginActivity.this,HomefeedActivity.class);
+
+                //homefeedActivity.putExtra("Bitmap",);
+                startActivity(homefeedActivity);
                 finish();
             }
         });
@@ -75,6 +90,7 @@ public class SocialLoginActivity extends AppCompatActivity {
 
         protected void onPostExecute(Bitmap result){
             bmImage.setImageBitmap(result);
+
         }
 
     }
