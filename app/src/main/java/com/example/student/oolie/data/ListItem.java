@@ -9,14 +9,14 @@ public class ListItem {
     private String comment;
     private String schoolName;
     private int schoolLogo;
-    private int type;
+    private boolean isImage;
 
-    public ListItem(String dateAndTime, String comment, String schoolName, int schoolLogo, int type) {
+    public ListItem(String dateAndTime, String comment, String schoolName, int schoolLogo, boolean isImage) {
         this.dateAndTime = dateAndTime;
         this.comment = comment;
         this.schoolName = schoolName;
         this.schoolLogo = schoolLogo;
-        this.type=type;
+        this.isImage=isImage;
     }
 
     public String getDateAndTime() {
@@ -51,11 +51,11 @@ public class ListItem {
         this.schoolLogo = schoolLogo;
     }
 
-    public int getType(){
-        return type;
+    public boolean getType(){
+        return isImage;
     }
 
     public void setType(int type) {
-        this.type = type;
+        this.isImage = isImage;
     }
 }

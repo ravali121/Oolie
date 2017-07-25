@@ -31,8 +31,8 @@
         <activity
             android:name=".view.HomefeedActivity"
             android:label="@string/title_activity_homefeed"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".view.FeedDetailActivity"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".view.FeedDetailActivity" />
     </application>
 
 </manifest>

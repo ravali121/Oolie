@@ -1,5 +1,7 @@
 package com.example.student.oolie.view;
 
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -19,6 +21,9 @@ import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.share.widget.ShareDialog;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 public class SocialLoginActivity extends AppCompatActivity {
@@ -27,6 +32,7 @@ public class SocialLoginActivity extends AppCompatActivity {
     TextView fb_username;
     Button logout,login;
     private ShareDialog shareDialog;
+    static String x;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +45,7 @@ public class SocialLoginActivity extends AppCompatActivity {
         String name = inBundle.get("name").toString();
         String surname = inBundle.get("surname").toString();
         final String imageUrl = inBundle.get("imageUrl").toString();
+        final String username= name+" "+surname;
 
         fb_username = (TextView) findViewById(R.id.fb_username);
         fb_username.setText("" + name + " " + surname);
@@ -59,8 +66,8 @@ public class SocialLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent homefeedActivity = new Intent(SocialLoginActivity.this,HomefeedActivity.class);
-
-                //homefeedActivity.putExtra("Bitmap",);
+                homefeedActivity.putExtra("Bitmap",x);
+                homefeedActivity.putExtra("Username",username);
                 startActivity(homefeedActivity);
                 finish();
             }
@@ -70,6 +77,7 @@ public class SocialLoginActivity extends AppCompatActivity {
     }
     public class DownloadImage extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
+
 
         public DownloadImage(ImageView bmImage){
             this.bmImage = bmImage;
@@ -90,8 +98,36 @@ public class SocialLoginActivity extends AppCompatActivity {
 
         protected void onPostExecute(Bitmap result){
             bmImage.setImageBitmap(result);
+            String x = storeToInternalStorage(result);
+            SocialLoginActivity.x =x;
 
         }
 
     }
+    private String storeToInternalStorage(Bitmap bitmapImage ){
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+        // path to /data/data/yourapp/app_data/imageDir
+        File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+        // Create imageDir
+        File mypath=new File(directory,"profile.jpg");
+
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(mypath);
+            // Use the compress method on the BitMap object to write image to the OutputStream
+            bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return directory.getAbsolutePath();
+
+    }
+
+
 }

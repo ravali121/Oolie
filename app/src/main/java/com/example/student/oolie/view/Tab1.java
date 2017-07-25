@@ -32,7 +32,8 @@ public class Tab1 extends Fragment implements ViewInterface{
     private static final String EXTRA_COMMENT = "EXTRA_COMMENT";
     private static final String EXTRA_SCHOOL_NAME = "EXTRA_SCHOOL_NAME";
     private static final String EXTRA_SCHOOL_LOGO = "EXTRA_SCHOOL_LOGO";
-
+    private final int TYPE_IMAGE =1;
+    private final int TYPE_VIDEO =0;
 
     private List<ListItem> listOfData;
     private RecyclerView recyclerView;
@@ -72,19 +73,19 @@ public class Tab1 extends Fragment implements ViewInterface{
         recyclerView.setAdapter(adapter);
     }
 
-
-
     private class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder>{
-
 
         @Override
         public int getItemViewType(int position){
 
-            return listOfData.get(position).getType();
+            if(listOfData.get(position).getType()){
+                return TYPE_IMAGE;
+            }
+            else {
+               return TYPE_VIDEO;
+            }
 
         }
-
-
 
         @Override
         public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
