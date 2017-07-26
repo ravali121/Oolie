@@ -36,6 +36,7 @@
                 android:padding="10dp"/>
 
             <TextView
+                android:id="@+id/tv_fullname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/BLACK"
@@ -62,6 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:id="@+id/botNavView"
-        design:menu="@menu/bot_nav_view"/>
+        design:menu="@menu/bot_nav_view"
+        android:background="@drawable/bot_nav_style"/>
 
 </android.support.design.widget.CoordinatorLayout>

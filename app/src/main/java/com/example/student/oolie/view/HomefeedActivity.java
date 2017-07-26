@@ -1,14 +1,21 @@
 package com.example.student.oolie.view;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.student.oolie.R;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class HomefeedActivity extends AppCompatActivity {
 
@@ -17,15 +24,18 @@ public class HomefeedActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPagerAdapter viewPagerAdapter;
     ImageView profileImage;
+    TextView fullname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homefeed);
 
-         Bitmap bitmap = (Bitmap)this.getIntent().getParcelableExtra("Bitmap");
-        profileImage = (ImageView)findViewById(R.id.iv_profile_small);
-        profileImage.setImageBitmap(bitmap);
+        Intent intent = getIntent();
+        loadImageFromStorage(intent.getStringExtra("Bitmap"));
+        fullname = (TextView)findViewById(R.id.tv_fullname);
+                fullname.setText(intent.getStringExtra("name"));
+
 
         // Set up the ViewPager with the sections adapter.
         viewPager = (ViewPager) findViewById(R.id.viewPager);
@@ -40,6 +50,21 @@ public class HomefeedActivity extends AppCompatActivity {
 
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+
+    }
+    private void loadImageFromStorage(String path)
+    {
+
+        try {
+            File f=new File(path, "profile.jpg");
+            Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
+           profileImage=(ImageView)findViewById(R.id.iv_profile_small);
+            profileImage.setImageBitmap(b);
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
 
     }
 

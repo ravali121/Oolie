@@ -32,7 +32,7 @@ public class SocialLoginActivity extends AppCompatActivity {
     TextView fb_username;
     Button logout,login;
     private ShareDialog shareDialog;
-    String path;
+     String path;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,7 @@ public class SocialLoginActivity extends AppCompatActivity {
         Bundle inBundle = getIntent().getExtras();
         String name = inBundle.get("name").toString();
         String surname = inBundle.get("surname").toString();
+        final String fullname = name+" "+surname;
         final String imageUrl = inBundle.get("imageUrl").toString();
 
         fb_username = (TextView) findViewById(R.id.fb_username);
@@ -66,7 +67,8 @@ public class SocialLoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent homefeedActivity = new Intent(SocialLoginActivity.this,HomefeedActivity.class);
 
-                //homefeedActivity.putExtra("Bitmap",);
+                homefeedActivity.putExtra("Bitmap",path);
+                homefeedActivity.putExtra("name",fullname);
                 startActivity(homefeedActivity);
                 finish();
             }
