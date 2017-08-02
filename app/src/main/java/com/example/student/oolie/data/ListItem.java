@@ -6,14 +6,14 @@ package com.example.student.oolie.data;
 
 public class ListItem {
     private String dateAndTime;
-    private String comment;
+    private String posts;
     private String schoolName;
     private int schoolLogo;
     private int type;
 
-    public ListItem(String dateAndTime, String comment, String schoolName, int schoolLogo, int type) {
+    public ListItem(String dateAndTime, String posts, String schoolName, int schoolLogo, int type) {
         this.dateAndTime = dateAndTime;
-        this.comment = comment;
+        this.posts = posts;
         this.schoolName = schoolName;
         this.schoolLogo = schoolLogo;
         this.type=type;
@@ -27,12 +27,12 @@ public class ListItem {
         this.dateAndTime = dateAndTime;
     }
 
-    public String getComment() {
-        return comment;
+    public String getPosts() {
+        return posts;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setPosts(String posts) {
+        this.posts = posts;
     }
 
     public String getSchoolName() {

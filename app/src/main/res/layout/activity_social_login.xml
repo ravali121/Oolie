@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     tools:context="com.example.student.oolie.view.SocialLoginActivity">
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -86,6 +85,8 @@
         android:layout_width="252dp"
         android:background="@drawable/edit_textbox_style"
         android:ems="10"
+        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintRight_toRightOf="@+id/grad_level"
         app:layout_constraintLeft_toLeftOf="@+id/grad_level"
         android:layout_marginTop="15dp"

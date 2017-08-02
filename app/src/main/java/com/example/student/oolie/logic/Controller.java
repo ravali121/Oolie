@@ -24,7 +24,7 @@ public class Controller {
     }
 
     public void onListItemClick(ListItem testItem) {
-        view.startDetailActivity(testItem.getDateAndTime(),testItem.getComment(),testItem.getSchoolName(),testItem.getSchoolLogo());
+        //view.startDetailActivity(testItem.getDateAndTime(),testItem.getPosts(),testItem.getSchoolName(),testItem.getSchoolLogo());
 
     }
 

@@ -36,9 +36,10 @@ public class ControllerUnitTest {
 
     private static final ListItem testItem = new
             ListItem("Wed Jul 12 2017",
-            "Hey How are you doing today?",
+            "http://imgur.com/Lx843rh",
             "Evergreen Valley High School",
-            R.mipmap.school);
+            R.mipmap.school,
+            1);
 
     @Before
     public void setUpTest(){
@@ -62,6 +63,6 @@ public class ControllerUnitTest {
     public void onListItemClicked(){
 
         controller.onListItemClick(testItem);
-        Mockito.verify(view).startDetailActivity(testItem.getDateAndTime(),testItem.getComment(),testItem.getSchoolName(),testItem.getSchoolLogo());
+        Mockito.verify(view).startDetailActivity(testItem.getDateAndTime(),testItem.getPosts(),testItem.getSchoolName(),testItem.getSchoolLogo());
     }
 }

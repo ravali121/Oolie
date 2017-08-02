@@ -3,11 +3,13 @@ package com.example.student.oolie.view;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -65,11 +67,13 @@ public class SocialLoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent homefeedActivity = new Intent(SocialLoginActivity.this,HomefeedActivity.class);
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(SocialLoginActivity.this);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("Bitmap",path);
+                editor.putString("name",fullname);
 
-                homefeedActivity.putExtra("Bitmap",path);
-                homefeedActivity.putExtra("name",fullname);
-                startActivity(homefeedActivity);
+                Intent pdfActivity = new Intent(SocialLoginActivity.this,PdfActivity.class);
+                startActivity(pdfActivity);
                 finish();
             }
         });

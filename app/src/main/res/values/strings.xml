@@ -16,6 +16,8 @@
     <string name="grad_yr">Graduation Year</string>
     <string name="school_name">School Name</string>
     <string name="write_a_message">Write a Message</string>
+    <string name="agree">I Agree</string>
+    <string name="dontagree">I don\'t Agree</string>
     <string-array name="grad_levels">
         <item>Graduation Year…</item>
         <item>2017(Senior)</item>

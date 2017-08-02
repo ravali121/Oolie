@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     tools:context="com.example.student.oolie.view.SignupActivity">
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -98,6 +97,7 @@
         android:paddingTop="12dp"
         android:layout_marginLeft="0dp"
         android:hint="@string/grad_yr"
+        android:textColorHint="@color/BLACK"
         android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="@+id/textViewClassOf"
         android:layout_marginTop="10dp"

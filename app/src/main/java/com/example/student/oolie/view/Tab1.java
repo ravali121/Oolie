@@ -15,10 +15,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.toolbox.ImageRequest;
 import com.example.student.oolie.R;
 import com.example.student.oolie.data.DataSource;
 import com.example.student.oolie.data.ListItem;
 import com.example.student.oolie.logic.Controller;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -54,7 +56,7 @@ public class Tab1 extends Fragment implements ViewInterface{
 
 
     @Override
-    public void startDetailActivity(String dateAndTime, String comment, String schoolName, int schoolLogo) {
+    public void startDetailActivity(String dateAndTime, String posts, String schoolName, int schoolLogo) {
         /*Intent intent = new Intent(getActivity(), FeedDetailActivity.class);
         intent.putExtra(EXTRA_DATE_AND_TIME,dateAndTime);
         intent.putExtra(EXTRA_COMMENT,comment);
@@ -79,26 +81,21 @@ public class Tab1 extends Fragment implements ViewInterface{
 
         @Override
         public int getItemViewType(int position){
-
             return listOfData.get(position).getType();
-
         }
-
-
 
         @Override
         public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
             View v = layoutInflater.from(parent.getContext()).inflate(R.layout.tab1_data_items,parent,false);
             context = parent.getContext();
-
-
             return new CustomViewHolder(v);
         }
         @Override
         public void onBindViewHolder(CustomViewHolder holder, int position) {
              ListItem currentItem = listOfData.get(position);
-            holder.comment.setText(currentItem.getComment());
+
+            Picasso.with(context).load(currentItem.getPosts()).into(holder.post);
+            //holder.post.setBackgroundResource(currentItem.getPosts());
             holder.date_posted.setText(currentItem.getDateAndTime());
             holder.school_name.setText(currentItem.getSchoolName());
             holder.school_logo.setBackgroundResource(currentItem.getSchoolLogo());
@@ -113,7 +110,7 @@ public class Tab1 extends Fragment implements ViewInterface{
         class CustomViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
             private ImageView school_logo;
-            private TextView comment;
+            private ImageView post;
             private TextView date_posted;
             private TextView school_name;
             private ViewGroup container;
@@ -122,7 +119,7 @@ public class Tab1 extends Fragment implements ViewInterface{
                 super(itemView);
 
                 this.school_logo = (ImageView)itemView.findViewById(R.id.iv_school_logo);
-                this.comment = (TextView)itemView.findViewById(R.id.tv_comment);
+                this.post = (ImageView) itemView.findViewById(R.id.tv_post);
                 this.date_posted = (TextView)itemView.findViewById(R.id.tv_date_posted);
                 this.school_name = (TextView)itemView.findViewById(R.id.tv_school_name);
                 this.container=(ViewGroup)itemView.findViewById(R.id.container);

@@ -1,8 +1,10 @@
 package com.example.student.oolie.view;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 
@@ -31,10 +33,10 @@ public class HomefeedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homefeed);
 
-        Intent intent = getIntent();
-        loadImageFromStorage(intent.getStringExtra("Bitmap"));
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        loadImageFromStorage(preferences.getString("Bitmap"," "));
         fullname = (TextView)findViewById(R.id.tv_fullname);
-                fullname.setText(intent.getStringExtra("name"));
+                fullname.setText(preferences.getString("name"," "));
 
 
         // Set up the ViewPager with the sections adapter.
@@ -43,7 +45,6 @@ public class HomefeedActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-
         viewPagerAdapter.addFragments(new Tab1(), "Feed");
         viewPagerAdapter.addFragments(new Tab2(), "Photos/Videos");
         viewPagerAdapter.addFragments(new Tab3(), "Profile");
