@@ -1,4 +1,4 @@
-package com.example.student.oolie.view;
+package com.example.student.oolie.view.Login;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.student.oolie.R;
+import com.example.student.oolie.view.Home.HomefeedActivity;
 
 import java.util.ArrayList;
 import java.util.List;

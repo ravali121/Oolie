@@ -1,4 +1,4 @@
-package com.example.student.oolie.view;
+package com.example.student.oolie.view.Login;
 
 /**
  * Created by Student on 7/2/17.

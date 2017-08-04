@@ -1,4 +1,4 @@
-package com.example.student.oolie.view;
+package com.example.student.oolie.view.Home;
 
 
 import android.os.Bundle;

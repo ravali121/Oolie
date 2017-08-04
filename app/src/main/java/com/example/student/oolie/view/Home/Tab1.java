@@ -1,4 +1,4 @@
-package com.example.student.oolie.view;
+package com.example.student.oolie.view.Home;
 
 
 import android.content.Context;
@@ -20,6 +20,7 @@ import com.example.student.oolie.R;
 import com.example.student.oolie.data.DataSource;
 import com.example.student.oolie.data.ListItem;
 import com.example.student.oolie.logic.Controller;
+import com.example.student.oolie.view.ViewInterface;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -28,7 +29,7 @@ import java.util.List;
  * Created by Student on 7/10/17.
  */
 
-public class Tab1 extends Fragment implements ViewInterface{
+public class Tab1 extends Fragment implements ViewInterface {
 
     private static final String EXTRA_DATE_AND_TIME = "EXTRA_DATE_AND_TIME";
     private static final String EXTRA_COMMENT = "EXTRA_COMMENT";

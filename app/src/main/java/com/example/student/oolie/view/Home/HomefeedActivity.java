@@ -1,6 +1,6 @@
-package com.example.student.oolie.view;
+package com.example.student.oolie.view.Home;
 
-import android.content.Intent;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,10 +10,14 @@ import android.support.v7.app.AppCompatActivity;
 
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.student.oolie.R;
+import com.example.student.oolie.view.Utils.BottomNavigationViewHelper;
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,11 +31,14 @@ public class HomefeedActivity extends AppCompatActivity {
     ViewPagerAdapter viewPagerAdapter;
     ImageView profileImage;
     TextView fullname;
+    private static final int ACTIVITY_NUM = 0;
+    private Context mContext = HomefeedActivity.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homefeed);
+
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         loadImageFromStorage(preferences.getString("Bitmap"," "));
@@ -52,7 +59,21 @@ public class HomefeedActivity extends AppCompatActivity {
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
+        setupBottomNavigationView();
+
     }
+
+    private void setupBottomNavigationView() {
+
+        BottomNavigationViewEx bottomNavigationViewEx = (BottomNavigationViewEx) findViewById(R.id.botNavView);
+        BottomNavigationViewHelper.setupBottomNavigationView(bottomNavigationViewEx);
+        BottomNavigationViewHelper.enableNavigation(mContext, bottomNavigationViewEx);
+        Menu menu = bottomNavigationViewEx.getMenu();
+        MenuItem menuItem = menu.getItem(ACTIVITY_NUM);
+        menuItem.setChecked(true);
+    }
+
+
     private void loadImageFromStorage(String path)
     {
 

@@ -2,22 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/ic_home"
         android:title="Home"
         android:icon="@drawable/ic_home_black_24dp"/>
 
     <item
+        android:id="@+id/ic_camera"
         android:title="Camera"
         android:icon="@drawable/ic_photo_camera_black_24dp"/>
 
     <item
+        android:id="@+id/ic_people"
         android:title="People"
         android:icon="@drawable/ic_people_black_24dp"/>
 
     <item
+        android:id="@+id/ic_school_board"
         android:title="SchoolBoard"
         android:icon="@drawable/ic_school_black_24dp"/>
 
     <item
+        android:id="@+id/ic_more"
         android:title="More"
         android:icon="@drawable/ic_more_black_24dp"/>
 
