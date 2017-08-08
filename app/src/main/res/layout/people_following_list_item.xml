@@ -16,18 +16,18 @@
     android:layout_alignParentTop="true"
     android:layout_toEndOf="@+id/iv_following_profile"
     android:layout_marginStart="17dp"
-    android:id="@+id/tv_username" />
+    android:id="@+id/tv_following_name" />
 
     <TextView
         android:id="@+id/tv_gradlevel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/tv_username"
-        android:layout_below="@+id/tv_username"
+        android:layout_alignStart="@+id/tv_following_name"
+        android:layout_below="@+id/tv_following_name"
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/tv_school"
+        android:id="@+id/tv_school_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tv_gradlevel"
