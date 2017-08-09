@@ -37,26 +37,32 @@ public class BottomNavigationViewHelper {
 
                     case R.id.ic_home:
                         Intent home = new Intent(context, HomefeedActivity.class);//ACTIVITY_NUM = 0
+                        home.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         context.startActivity(home);
+
                         break;
 
                     case R.id.ic_camera:
                         Intent camera = new Intent(context, CameraActivity.class);//ACTIVITY_NUM = 1
+                        camera.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         context.startActivity(camera);
                         break;
 
                     case R.id.ic_people:
                         Intent people = new Intent(context, PeopleActivity.class);//ACTIVITY_NUM = 2
+                        people.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         context.startActivity(people);
                         break;
 
                     case R.id.ic_school_board:
                         Intent schoolBoard = new Intent(context, SchoolBoardActivity.class);//ACTIVITY_NUM = 3
+                        schoolBoard.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         context.startActivity(schoolBoard);
                         break;
 
                     case R.id.ic_more:
                         Intent more = new Intent(context, MoreActivity.class);//ACTIVITY_NUM = 4
+                        more.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         context.startActivity(more);
                         break;
                 }
