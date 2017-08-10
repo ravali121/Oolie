@@ -18,6 +18,8 @@
     <string name="write_a_message">Write a Message</string>
     <string name="agree">I Agree</string>
     <string name="dontagree">I don\'t Agree</string>
+    <string name="image">Image</string>
+    <string name="video">Video</string>
     <string-array name="grad_levels">
         <item>Graduation Year…</item>
         <item>2017(Senior)</item>
